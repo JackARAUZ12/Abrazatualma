@@ -6,18 +6,20 @@
   <title>Abraza tu alma - Inicio</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0; 
       padding: 0;
-      background-color: #f0f8ff;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background-color: #f7faff;
       color: #333;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
+    /* Header con imagen y transparencia */
     header {
-      background-color: #6a9fb5;
-      padding: 15px 20px;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                  url('https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
+      padding: 20px;
       color: white;
       display: flex;
       justify-content: space-between;
@@ -30,58 +32,93 @@
       margin: 0 15px;
       font-weight: bold;
       font-size: 1.1em;
+      transition: color 0.3s ease;
     }
     nav a:hover {
-      text-decoration: underline;
+      color: #ffd27f;
     }
+    /* Sección de bienvenida */
     main {
       flex-grow: 1;
       padding: 40px 20px;
-      max-width: 900px;
+      max-width: 1100px;
       margin: 0 auto;
-      text-align: center;
     }
-    h1 {
-      color: #3b5a6f;
+    .intro-container {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      overflow: hidden;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
     }
-    p.intro {
+    .intro-text {
+      flex: 1;
+      padding: 30px;
+      text-align: left;
+    }
+    .intro-text h1 {
+      color: #2c4b60;
+      margin-bottom: 15px;
+      font-size: 2.2em;
+    }
+    .intro-text p {
       font-size: 1.15em;
-      margin: 20px 0 35px;
-      line-height: 1.6;
+      line-height: 1.7;
+      margin-bottom: 25px;
+    }
+    .intro-image {
+      flex: 1;
+      min-width: 300px;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
     }
     button.adquirir {
-      background-color: #3b5a6f;
+      background-color: #2c4b60;
       color: white;
       border: none;
       padding: 15px 30px;
       font-size: 1.2em;
       cursor: pointer;
       border-radius: 6px;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
     button.adquirir:hover {
-      background-color: #2b3f52;
+      background-color: #1f3545;
+      transform: scale(1.05);
     }
+    /* Footer */
     footer {
-      background-color: #6a9fb5;
+      background-color: #2c4b60;
       color: white;
-      padding: 15px 20px;
+      padding: 20px;
       text-align: center;
-      font-size: 0.9em;
+      font-size: 0.95em;
     }
     footer a {
-      color: #e1f0ff;
+      color: #ffd27f;
       text-decoration: none;
       font-weight: bold;
-      margin-left: 10px;
+      margin-left: 8px;
     }
     footer a:hover {
       text-decoration: underline;
+    }
+    /* Responsive */
+    @media (max-width: 768px) {
+      .intro-container {
+        flex-direction: column;
+      }
+      .intro-image {
+        height: 250px;
+      }
     }
   </style>
 </head>
 <body>
   <header>
+    <div style="font-size: 1.5em; font-weight: bold;">Abraza tu alma</div>
     <nav>
       <a href="#" id="nav-inicio">Inicio</a>
       <a href="material-educativo.html" target="_blank">Material Educativo</a>
@@ -89,38 +126,49 @@
       <a href="sugerencias.html" target="_blank">Sugerencias</a>
     </nav>
   </header>
+
   <main>
-    <h1 id="bienvenida">¡Bienvenido!</h1>
-    <p class="intro">
-      Somos <strong>Abraza tu alma</strong>, un espacio seguro para jóvenes de 13 a 25 años que buscan apoyo emocional y psicológico.
-      Ofrecemos charlas informativas, talleres vivenciales y creativos, zonas creativas, material educativo y orientación psicológica básica.
-      Nuestro centro está ubicado en Lomas de San Francisco, segunda etapa, con proyección para atender comunidades urbanas, semiurbanas y rurales.
-    </p>
-    <button class="adquirir" id="btn-adquirir">Adquirir plan psicológico ya</button>
+    <div class="intro-container">
+      <div class="intro-text">
+        <h1 id="bienvenida">¡Bienvenido!</h1>
+        <p>
+          En <strong>Abraza tu alma</strong> somos ese lugar seguro que muchas personas buscan y pocos encuentran.
+          Nuestro objetivo es acompañar a jóvenes de 13 a 25 años a través de <em>charlas informativas</em>, 
+          <em>talleres vivenciales y creativos</em>, <em>zonas creativas</em>, <em>material educativo</em> 
+          y <em>orientación psicológica básica</em>.
+          <br><br>
+          Estamos ubicados en Lomas de San Francisco, segunda etapa, con la misión de extender nuestro apoyo
+          a comunidades urbanas, semiurbanas y rurales.
+        </p>
+        <button class="adquirir" id="btn-adquirir">Adquirir plan psicológico ya</button>
+      </div>
+      <div class="intro-image"></div>
+    </div>
   </main>
+
   <footer>
     Contacto: <a href="https://wa.me/50577987827" target="_blank" rel="noopener">7798 7827</a><br />
     © 2025 Abraza tu alma. Todos los derechos reservados.
   </footer>
 
   <script>
-    // Pedir nombre y saludar con personalización
+    // Prompt profesional para pedir nombre
     function pedirNombre() {
-      let nombre = prompt("Hola, ¿cuál es tu nombre?");
+      let nombre = prompt("Bienvenido a Abraza tu alma.\nPor favor, ingresa tu nombre para personalizar tu experiencia:");
       if (nombre && nombre.trim() !== "") {
         document.getElementById("bienvenida").textContent = `¡Bienvenido, ${nombre.trim()}!`;
       }
     }
     pedirNombre();
 
-    // Botón adquirir plan: abrir WhatsApp con mensaje
+    // Botón adquirir plan
     const numeroWhatsApp = "50577987827";
     const mensaje = encodeURIComponent("Hola, quiero adquirir el plan psicológico de Abraza tu alma.");
     document.getElementById("btn-adquirir").addEventListener("click", () => {
       window.open(`https://wa.me/${numeroWhatsApp}?text=${mensaje}`, "_blank");
     });
 
-    // Navegación "Inicio" recarga la página
+    // Reinicio de Inicio
     document.getElementById("nav-inicio").addEventListener("click", (e) => {
       e.preventDefault();
       location.reload();
