@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Abraza tu alma - Inicio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; 
+      padding: 0;
+      background-color: #f0f8ff;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background-color: #6a9fb5;
+      padding: 15px 20px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      flex-grow: 1;
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    h1 {
+      color: #3b5a6f;
+    }
+    p.intro {
+      font-size: 1.15em;
+      margin: 20px 0 35px;
+      line-height: 1.6;
+    }
+    button.adquirir {
+      background-color: #3b5a6f;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+    button.adquirir:hover {
+      background-color: #2b3f52;
+    }
+    footer {
+      background-color: #6a9fb5;
+      color: white;
+      padding: 15px 20px;
+      text-align: center;
+      font-size: 0.9em;
+    }
+    footer a {
+      color: #e1f0ff;
+      text-decoration: none;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" id="nav-inicio">Inicio</a>
+      <a href="material-educativo.html" target="_blank">Material Educativo</a>
+      <a href="integrantes.html" target="_blank">Integrantes</a>
+      <a href="sugerencias.html" target="_blank">Sugerencias</a>
+    </nav>
+  </header>
+  <main>
+    <h1 id="bienvenida">¡Bienvenido!</h1>
+    <p class="intro">
+      Somos <strong>Abraza tu alma</strong>, un espacio seguro para jóvenes de 13 a 25 años que buscan apoyo emocional y psicológico.
+      Ofrecemos charlas informativas, talleres vivenciales y creativos, zonas creativas, material educativo y orientación psicológica básica.
+      Nuestro centro está ubicado en Lomas de San Francisco, segunda etapa, con proyección para atender comunidades urbanas, semiurbanas y rurales.
+    </p>
+    <button class="adquirir" id="btn-adquirir">Adquirir plan psicológico ya</button>
+  </main>
+  <footer>
+    Contacto: <a href="https://wa.me/50577987827" target="_blank" rel="noopener">7798 7827</a><br />
+    © 2025 Abraza tu alma. Todos los derechos reservados.
+  </footer>
+
+  <script>
+    // Pedir nombre y saludar con personalización
+    function pedirNombre() {
+      let nombre = prompt("Hola, ¿cuál es tu nombre?");
+      if (nombre && nombre.trim() !== "") {
+        document.getElementById("bienvenida").textContent = `¡Bienvenido, ${nombre.trim()}!`;
+      }
+    }
+    pedirNombre();
+
+    // Botón adquirir plan: abrir WhatsApp con mensaje
+    const numeroWhatsApp = "50577987827";
+    const mensaje = encodeURIComponent("Hola, quiero adquirir el plan psicológico de Abraza tu alma.");
+    document.getElementById("btn-adquirir").addEventListener("click", () => {
+      window.open(`https://wa.me/${numeroWhatsApp}?text=${mensaje}`, "_blank");
+    });
+
+    // Navegación "Inicio" recarga la página
+    document.getElementById("nav-inicio").addEventListener("click", (e) => {
+      e.preventDefault();
+      location.reload();
+    });
+  </script>
+</body>
+</html>
